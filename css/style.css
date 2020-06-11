@@ -26,6 +26,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 1em;
+  align-items: end;
 }
 
 .box {
@@ -65,7 +66,7 @@ body {
 
 .box-info {
   height: 160px;
-  padding: 0 34px;
+  padding: 0 2.4em;
   background-color: var(--darkBlue);
   border-radius: 10px;
   font-size: 1em;
@@ -144,4 +145,43 @@ body {
   font-weight: 700;
   font-size: 3em;
   margin-right: 10px;
+}
+
+/* resposive design */
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: var(--veryDarkBlue);
+    background-image: url("../images/bg-desktop.svg");
+    background-size: contain;
+    background-position-y: 50vh;
+    background-repeat: no-repeat;
+  }
+  .wrapper {
+    width: 90%;
+    grid-template-columns: 340px 1fr;
+    column-gap: 2em;
+  }
+  .box-info .title {
+    align-self: flex-start;
+  }
+  .box-info .box-white {
+    top: -45px;
+    right: 0em;
+    margin-right: 2.9em;
+  }
+  .box-info .box-white::before {
+    content: "";
+    border: 20px solid transparent;
+    border-right: 20px solid white;
+    position: absolute;
+    bottom: -20px;
+    right: 0px;
+  }
+}
+
+@media screen and (min-width: 1034px) {
+  .wrapper {
+    max-width: 860px;
+  }
 }
